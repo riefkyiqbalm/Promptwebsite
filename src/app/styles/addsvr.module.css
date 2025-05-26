@@ -1,0 +1,163 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css");
+
+.brdcrmUsr {
+  font-size: 0.9rem;
+  color: var(--light-text);
+  margin-bottom: 1.5rem;
+  background-color: var(--navbar-bg);
+  margin-top: 6.4rem;
+  margin-left: 4.4rem;
+  /* padding: 0.5rem 2rem; */
+  height: 1rem;
+  /* display: flex; */
+}
+.dshBlck {
+  display: block;
+  gap: 1rem;
+  margin-top: 4.5rem;
+  min-width: 100%;
+  margin-bottom: 1rem;
+  /* border: 8px solid; */
+  margin-left: 1rem;
+}
+.secOne {
+  color: green;
+  display: block;
+  /* border: 5px dashed; */
+  /* min-height: 100%; */
+}
+
+.secOne::placeholder {
+  margin-left: 1rem;
+}
+
+.icn {
+  /* display: flex; */
+  gap: 4;
+  /* margin-top: 1rem; */
+  margin-bottom: 1rem;
+  /* max-height: 50%; */
+  /* color: royalblue; */
+  font-family: "Open Sans", sans-serif;
+  font-size: x-large;
+  font-weight: bold;
+  /* text-transform: uppercase; */
+  color: transparent;
+  background: repeating-linear-gradient(
+    -45deg,
+    #2c3e50,
+    #2c3e50 2.8px,
+    #ffffff 5px,
+    #ffffff 3.5px
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  position: relative;
+  display: flex;
+  padding: 10px 10px;
+  /* z-index: -1; */
+  cursor: pointer;
+}
+
+.icn::after {
+  content: "";
+  position: absolute;
+  left: 2.5rem;
+  bottom: 4px;
+  width: 78%;
+  height: 12px;
+  background-color: royalblue; /* #5ca2d1*/
+  z-index: -1;
+  border-radius: 5px;
+  box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.3);
+}
+
+.youPrompt {
+  /* display: flex; */
+  gap: 4;
+  /* margin-top: 1rem; */
+  margin-bottom: 1rem;
+  /* max-height: 50%; */
+  /* color: royalblue; */
+  font-family: "Open Sans", sans-serif;
+  font-size: x-large;
+  font-weight: bold;
+  /* text-transform: uppercase; */
+  color: transparent;
+  background: repeating-linear-gradient(
+    -45deg,
+    #2c3e50,
+    #2c3e50 2.8px,
+    #ffffff 5px,
+    #ffffff 3.5px
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  position: relative;
+  display: flex;
+  padding: 10px 10px;
+  z-index: -1;
+  cursor: pointer;
+}
+
+.youPrompt::after {
+  content: "";
+  position: absolute;
+  left: 0.7rem;
+  bottom: 4px;
+  width: 19.5%;
+  height: 12px;
+  background-color: royalblue; /* #5ca2d1*/
+  z-index: -1;
+  border-radius: 5px;
+  box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.3);
+}
+
+.a {
+  width: 20%;
+}
+
+.icn svg {
+  /* border: 8px solid; */
+  width: 30px;
+  align-self: center;
+  color: black;
+  /* weight: bold; */
+}
+.secTw {
+  /* color: blue; */
+  border: 1px solid;
+  border-color: red;
+}
+
+textarea::placeholder {
+  bottom: 10px;
+  left: 10px;
+  transform: translateY(20%);
+}
+
+.postButton {
+  /* display: flex; */
+  gap: 4;
+  /* margin-top: 1rem; */
+  margin-bottom: 1rem;
+  /* max-height: 50%; */
+  /* color: royalblue; */
+  font-family: "Open Sans", sans-serif;
+  font-size: large;
+  font-weight: bold;
+  /* margin-left: 10vh; */
+  margin-top: 1rem;
+  /* text-transform: uppercase; */
+  color: white;
+  background-color: royalblue;
+  padding: 8px;
+  border: 2px solid;
+  border-color: royalblue;
+  border-radius: 12px;
+}
+
+.datepick {
+  padding: 1rem;
+}

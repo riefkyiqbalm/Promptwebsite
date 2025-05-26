@@ -1,0 +1,207 @@
+/* styles/Auth.module.css */
+
+.authContainer {
+  max-width: 28rem;
+  margin: 0 auto;
+  padding: 2rem;
+  /* margin-top: 1rem;  */
+}
+
+.authForm {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+  margin-bottom: 1.5rem;
+  margin: 2rem;
+  margin-top: 1;
+}
+
+.authTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #1a202c;
+  font-family: "notosans", sans-serif;
+}
+
+.authFormGroup {
+  margin-bottom: 1.25rem;
+}
+
+.authLabel {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #4a5568;
+  font-family: "notosans", sans-serif;
+}
+
+.authInput {
+  width: 90%;
+  padding: 0.8rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.4rem;
+  font-size: 0.8rem;
+  transition: border-color 0.2s;
+  font-family: "notosans", sans-serif;
+}
+
+.authInput:focus {
+  outline: none;
+  border-color: #4299e1;
+  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.2);
+}
+
+.authButton {
+  width: 100%;
+  padding: 0.8rem;
+  background-color: #4299e1;
+  color: white;
+  font-weight: 500;
+  border: none;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.authButton:hover {
+  background-color: #3182ce;
+}
+
+.authButton:disabled {
+  background-color: #a0aec0;
+  cursor: not-allowed;
+}
+
+.authLinks {
+  text-align: right;
+  margin-bottom: 1.25rem;
+}
+
+.authLink {
+  color: #4299e1;
+  font-size: 0.875rem;
+  text-decoration: none;
+}
+
+.authLink:hover {
+  text-decoration: underline;
+}
+
+.authDivider {
+  position: relative;
+  margin: 1.5rem 0;
+  text-align: center;
+  color: #a0aec0;
+  font-size: 0.875rem;
+}
+
+.authDivider::before,
+.authDivider::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 45%;
+  height: 1px;
+  background-color: #e2e8f0;
+}
+
+.authDivider::before {
+  left: 0;
+}
+
+.authDivider::after {
+  right: 0;
+}
+
+.socialAuth {
+  margin-bottom: 1.5rem;
+}
+
+.formCheckLabel {
+  /* display: flex; */
+  align-items: center;
+  font-size: 0.875rem;
+  color: #4a5568;
+  font-family: "" notosans "", sans-serif;
+  margin-left: 0.5rem;
+}
+
+.socialButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 0.75rem;
+  background-color: white;
+  color: #4a5568;
+  font-weight: 500;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.socialButton:hover {
+  background-color: #f7fafc;
+}
+
+.socialIcon {
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-right: 0.75rem;
+}
+
+.authSwitch {
+  text-align: center;
+  font-size: 0.8rem;
+  color: #4a5568;
+  margin-top: 1rem;
+  font-family: "notosans", sans-serif;
+}
+
+.authSwitchLink {
+  color: #4299e1;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.authSwitchLink:hover {
+  text-decoration: underline;
+}
+
+.authError {
+  padding: 0.75rem;
+  margin-bottom: 1.25rem;
+  background-color: #fff5f5;
+  color: #e53e3e;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+}
+
+.authMessage {
+  padding: 0.75rem;
+  margin-bottom: 1.25rem;
+  background-color: #f0fff4;
+  color: #38a169;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+}
+
+.lgcard {
+  margin-left: 7.8rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .authContainer {
+    padding: 1rem;
+  }
+
+  .authForm {
+    padding: 1.5rem;
+  }
+}

@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "segment": "Engineering",
+    "date": "2023-05-15T10:30:00Z",
+    "engine": "Deepseek",
+    "Description": "A comprehensive guide to building scalable systems",
+    "title": "System Architecture Patterns",
+    "content": "Explain the microservices architecture pattern with examples"
+  },
+  {
+    "id": 2,
+    "segment": "Document",
+    "date": "2023-05-15T10:30:00Z",
+    "engine": "OpenAI",
+    "Description": "A comprehensive guide to writing effective documentation",
+    "title": "Documentation Best Practices",
+    "content": "Explain the importance of documentation in software development and provide examples of good documentation practices"
+  },
+  {
+    "id": 3,
+    "segment": "Films",
+    "date": "2024-01-14T10:20:01Z",
+    "engine": "Midjourney",
+    "Description": "Development of a new film project",
+    "title": "Film Project Development",
+    "content": "Outline the steps involved in developing a new film project, from concept to production"
+  },
+  {
+    "id": 4,
+    "segment": "Software",
+    "date": "2021-02-22E10:45:21Z",
+    "engine": "DALL-E",
+    "Description": "A guide to creating Software for software applications",
+    "title": "Software Development",
+    "content": "Describe the process of creating a Software for a popular software application, including tools and best practices"
+  },
+  {
+    "id": 5,
+    "segment": "Images",
+    "date": "2023-05-15T10:30:00Z",
+    "engine": "DALL-E",
+    "Description": "A guide to creating images using AI",
+    "title": "Image Generation",
+    "content": "Explain the process of generating images using AI, including the tools and techniques involved"
+  },
+  {
+    "id": 6,
+    "segment": "Images",
+    "date": "2023-05-15T10:30:00Z",
+    "engine": "DALL-E",
+    "Description": "A guide to creating images using AI",
+    "title": "Image Generation",
+    "content": "Explain the process of generating images using AI, including the tools and techniques involved"
+  }
+]

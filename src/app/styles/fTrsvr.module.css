@@ -1,0 +1,52 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css");
+
+.openSans {
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: bold;
+  font-variation-settings: "wdth" 100;
+}
+
+.footCopy {
+  padding-top: 0.8rem;
+  background-color: cadetblue;
+  opacity: 0.8;
+  color: white;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.footList {
+  display: flex;
+  justify-content: center;
+}
+
+.footList a {
+  color: white;
+  text-decoration: none;
+  margin-right: 0.8rem;
+}
+
+.footList a:hover {
+  color: royalblue;
+}
+
+.footIcon {
+  margin-top: 2rem;
+  color: white;
+  margin-right: 0.8rem;
+}
+.footIcon a {
+  color: white;
+  text-decoration: none;
+  margin-right: 0.8rem;
+  font-size: 1.8rem;
+  margin-bottom: 1.2rem;
+  justify-content: center;
+}
+
+.footIcon a:hover {
+  color: royalblue;
+}
