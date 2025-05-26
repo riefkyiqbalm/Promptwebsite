@@ -1,7 +1,6 @@
 import ContentCard from "@/app/components/ContentCard";
 import styles from "@/app/styles/addsvr.module.css";
 import sty from "@/app/styles/crdsvr.module.css";
-import { FiArrowLeft } from "react-icons/fi";
 import { Datepicker } from "flowbite-react";
 import GoBackButton from "@/app/components/goback";
 
@@ -57,17 +56,17 @@ export default async function Dashboard() {
         <div className="flex justify-around items-center">
           <label>Choose a Field:</label>
           <select name="mainfield" id="field">
-            <option value="Engineering">Volvo</option>
-            <option value="Films">Saab</option>
-            <option value="Images">Mercedes</option>
-            <option value="Sofware">Audi</option>
+            <option value="Engineering">Engineering</option>
+            <option value="Films">Films</option>
+            <option value="Images">Images</option>
+            <option value="Sofware">Software</option>
           </select>
           <label>Choose a engine:</label>
           <select name="AIengine" id="engine">
-            <option value="volvo">Volvo</option>
-            <option value="saab">Saab</option>
-            <option value="mercedes">Mercedes</option>
-            <option value="audi">Audi</option>
+            <option value="Chat-GpT">Chat-GpT</option>
+            <option value="DeepSeek">DeepSeek</option>
+            <option value="Midjourney">Midjourney</option>
+            <option value="Gemini">Gemini</option>
           </select>
           <Datepicker className={styles.datepick} />
           <button className={styles.postButton}>Post</button>
