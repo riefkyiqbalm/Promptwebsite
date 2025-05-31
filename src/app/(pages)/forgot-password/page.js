@@ -2,6 +2,7 @@
 "use client";
 import styles from "../../styles/AthSvr.module.css";
 import { useState } from "react";
+import Link from "next/link";
 
 export default function ForgotPasswordPage() {
   const [email, setEmail] = useState("");
@@ -41,9 +42,10 @@ export default function ForgotPasswordPage() {
     <div className={styles.authContainer}>
       <form onSubmit={handleSubmit} className={styles.authForm}>
         <img
-          src={"http//:localhost:300/public/Logo.svg"}
+          src={"../../../../prmptsite.svg"}
           alt="Logo"
           className={styles.lgcard}
+          width={400}
         />
         <h2 className={styles.authTitle}>Forgot Password</h2>
 
@@ -70,9 +72,9 @@ export default function ForgotPasswordPage() {
 
         <div className={styles.authSwitch}>
           Remember your password?{" "}
-          <a href="../../login" className={styles.authSwitchLink}>
+          <Link href="../login" className={styles.authLink}>
             Login
-          </a>
+          </Link>
         </div>
       </form>
     </div>

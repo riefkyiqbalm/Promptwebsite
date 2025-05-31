@@ -44,6 +44,12 @@ export default function ForgotPasswordPage() {
   return (
     <div className={styles.authContainer}>
       <form onSubmit={handleSubmit} className={styles.authForm}>
+        <img
+          src={"../../../../prmptsite.svg"}
+          alt="Logo"
+          className={styles.lgcard}
+          width={400}
+        />
         <h2 className={styles.authTitle}>Create New Password</h2>
 
         {error && <div className={styles.authError}>{error}</div>}

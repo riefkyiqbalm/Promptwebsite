@@ -29,7 +29,12 @@ export default function LoginForm() {
     <>
       <div className={styles.authContainer}>
         <form onSubmit={handleSubmit} className={styles.authForm}>
-          <img src={"@/public/Logo.svg"} alt="Logo" className={styles.lgcard} />
+          <img
+            src={"../../../../prmptsite.svg"}
+            alt="Logo"
+            className={styles.lgcard}
+            width={400}
+          />
           <h2 className={styles.authTitle}>Login</h2>
 
           {error && <div className={styles.authError}>{error}</div>}
@@ -69,7 +74,7 @@ export default function LoginForm() {
           </div>
 
           <div className={styles.authLinks}>
-            <Link href="../../forgot-password" className={styles.authLink}>
+            <Link href="../forgot-password" className={styles.authLink}>
               Forgot password?
             </Link>
           </div>
@@ -88,7 +93,7 @@ export default function LoginForm() {
 
           <div className={styles.authSwitch}>
             Don't have an account?{" "}
-            <Link href="../../register" className={styles.authSwitchLink}>
+            <Link href="../register" className={styles.authLink}>
               Register
             </Link>
           </div>

@@ -15,7 +15,7 @@ export default function BlogLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <body>
+    <>
       <div className={styles.dashboardLayout}>
         <div className={styles.dashboardContent}>{children}</div>
         <RightColumn />
@@ -23,6 +23,6 @@ export default function BlogLayout({
       <footer>
         <Footer />
       </footer>
-    </body>
+    </>
   );
 }

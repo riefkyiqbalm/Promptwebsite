@@ -51,11 +51,15 @@ export default function TopNavbar({ onSearch }) {
       </Link> */}
       {isLoggedIn ? (
         <Link href="/dashboard">
-          <div className={styles.logo}>TeTrA</div>
+          <div className={styles.logo}>
+            <img src={"../../../prmptsite.svg"}></img>
+          </div>
         </Link>
       ) : (
         <Link href="/">
-          <div className={styles.logo}>TeTrA</div>
+          <div className={styles.logo}>
+            <img width={200} src={"../../../prmptsite.svg"}></img>
+          </div>
         </Link>
       )}
 
@@ -112,13 +116,8 @@ export default function TopNavbar({ onSearch }) {
             <FiUser />
           </div>
         ) : (
-          <Link href="/login">
-            <button
-              className={styles.signupButton}
-              // onClick={() => router.push("/login")}
-            >
-              Sign In
-            </button>
+          <Link href="/login" className={styles.signupButton}>
+            Sign In
           </Link>
         )}
       </div>

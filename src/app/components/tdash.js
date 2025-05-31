@@ -47,7 +47,7 @@ export default function TopNavbar({ onSearch }) {
   return (
     <nav className={styles.topNavbar}>
       <div className={styles.logo} onClick={() => router.push("/")}>
-        TeTrA
+        <img width={200} src={"../../../prmptsite.svg"}></img>
       </div>
 
       <div className={styles.searchContainer} ref={searchRef}>

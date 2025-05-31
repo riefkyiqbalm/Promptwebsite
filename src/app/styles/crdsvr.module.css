@@ -38,54 +38,84 @@
   justify-content: space-between;
   margin-bottom: 1rem;
 }
+.carHeader:hover {
+  text-decoration: underline;
+  cursor: pointer;
+  color: royalblue;
+}
 
-.cardBadge {
+.cardBadge.Dashboard {
   font-size: 0.75rem;
   font-weight: 600;
   padding: 0.25rem 0.75rem;
   border-radius: 999px;
-  text-transform: capitalize;
-}
-
-.cardBadge.dashboard {
   background-color: #dbeafe;
   color: #1e40af;
 }
 
-.cardBadge.engineering {
-  background-color: #dcfce7;
-  color: #166534;
+.cardBadgeEngineering {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  background-color: #dbeafe;
+  color: #1e40af;
+  cursor: pointer;
 }
 
-.cardBbadge.document {
+.cardBadgeOffice {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
   background-color: #fef3c7;
   color: #92400e;
+  cursor: pointer;
 }
 
-.cardBadge.image {
+.cardBadgeImages {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
   background-color: #fce7f3;
   color: #9d174d;
+  cursor: pointer;
 }
 
-.cardBadge.video {
+.cardBadgeFilms {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
   background-color: #e0e7ff;
   color: #3730a3;
+  cursor: pointer;
 }
 
-.cardBadge.trading {
+.cardBadgeSoftware {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
   background-color: #ecfdf5;
-  color: #065f46;
+  color: #079f46;
+  cursor: pointer;
 }
 
 .cardDate {
   font-size: 0.75rem;
   color: var(--light-text);
+  background-color: #ecfdf5;
+  border-radius: 999px;
+  font-weight: 600;
+  padding: 0.25rem 0.75rem;
 }
 
 .cardTitle {
   font-size: 18px;
   margin-bottom: 0.75rem;
-  font-family: "PT Sans", sans-serif;
+  font-family: "PT-Sans", sans-serif;
 }
 
 .cardTitle:hover {
@@ -128,6 +158,7 @@
   font-size: 0.8rem;
   color: var(--primary-color);
   font-weight: 600;
+  cursor: auto;
 }
 
 .link {

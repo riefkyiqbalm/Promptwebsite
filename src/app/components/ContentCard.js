@@ -10,7 +10,7 @@ export default function ContentCard({ data }) {
     <div className={styles.contentCard}>
       <div className={styles.cardHeader}>
         <span
-          className={`card-badge ${data.segment}`}
+          className={`${styles.cardBadge}${data.segment}`}
           onClick={() =>
             router.push(
               "/" + data.segment.charAt(0).toLowerCase() + data.segment.slice(1)

@@ -27,7 +27,6 @@ export default async function Dashboard() {
     <div className={styles.dshBlck}>
       <section className={styles.secOne}>
         <GoBackButton />
-
         <div>
           <form className="flex flex-col">
             <input

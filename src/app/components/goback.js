@@ -14,7 +14,7 @@ export default function GoBackButton() {
   return (
     <button onClick={handleGoBack} className={styles.icn}>
       <FiArrowLeft />
-      <h2 className={sty.brdcrmUsr}>Dashboard</h2>
+      <h2 className={sty.brdcrmUsr}>Back</h2>
     </button>
   );
 }

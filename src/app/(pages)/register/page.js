@@ -3,9 +3,10 @@
 
 import styles from "../../styles/AthSvr.module.css";
 import { useState } from "react";
-import { useRouter } from "next/navigation";
+
 import SocialAuth from "../../components/SocialAuth";
 import ShowPasswordToggle from "../../components/ShowPasswordToggle";
+import Link from "next/link";
 
 export default function RegisterPage() {
   const [name, setName] = useState("");
@@ -15,7 +16,6 @@ export default function RegisterPage() {
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
-  const router = useRouter();
 
   const handleSubmit = async (e = any) => {
     e.preventDefault();
@@ -32,6 +32,12 @@ export default function RegisterPage() {
     <>
       <div className={styles.authContainer}>
         <form onSubmit={handleSubmit} className={styles.authForm}>
+          <img
+            src={"../../../../prmptsite.svg"}
+            alt="Logo"
+            className={styles.lgcard}
+            width={400}
+          />
           <h2 className={styles.authTitle}>Register</h2>
 
           {error && <div className={styles.authError}>{error}</div>}
@@ -114,9 +120,9 @@ export default function RegisterPage() {
 
           <div className={styles.authSwitch}>
             Already have an account?{" "}
-            <a href="../../login" className={styles.authSwitchLink}>
+            <Link href="../login" className={styles.authSwitchLink}>
               Login
-            </a>
+            </Link>
           </div>
         </form>
       </div>
