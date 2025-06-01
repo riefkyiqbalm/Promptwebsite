@@ -1,9 +1,7 @@
 import styles from "./styles/crdsvr.module.css";
 import BlogLayout from "@/app/layout/hmlyt.module";
-// import dynamic from "next/dynamic";
 import ContentCard from "@/app/components/ContentCard";
-// import ContentCard from "@/app/components/ContentCard";
-// const ContentCard = dynamic(() => import("@/app/components/ContentCard"));
+
 async function getData() {
   const res = await fetch("http://localhost:3000/api/blog/prmpt", {
     cache: "no-store",

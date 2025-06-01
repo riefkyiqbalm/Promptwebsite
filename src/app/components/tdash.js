@@ -1,29 +1,30 @@
 "use client";
 import { FiSearch, FiUser, FiX } from "react-icons/fi";
 import useSearch from "./search";
-import { useEffect, useRef } from "react";
-import styles from "@/app/styles/hmsvr.module.css";
+import { useEffect, useRef, useState } from "react";
+import styles from "../styles/hmsvr.module.css";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 
-export default function TopNavbar({ onSearch }) {
+export default function TopNavbar({ contentData }) {
   const {
     searchQuery,
     suggestions,
     showSuggestions,
     isSearching,
-
+    searchResults,
     setSearchQuery,
     handleSearchChange,
     handleSuggestionClick,
     handleKeyDown,
     setShowSuggestions,
-    searchResults,
-  } = useSearch("");
+  } = useSearch(contentData);
+
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const searchRef = useRef(null);
-  const isLoggedIn = true;
-  // Close suggestions when clicking outside
+  const router = useRouter();
+
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (searchRef.current && !searchRef.current.contains(event.target)) {
@@ -33,22 +34,36 @@ export default function TopNavbar({ onSearch }) {
 
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, []);
+  }, [setShowSuggestions]);
 
-  // Notify parent component when search results change
-  useEffect(() => {
-    if (onSearch) {
-      onSearch(searchResults);
-    }
-  }, [searchResults]);
+  // useEffect(() => {
+  //   if (data) { // 'data' is now 'contentData' and is not a function
+  //     data(searchResults);
+  //   }
+  // }, [searchResults]);
+  // If you need to pass search results to a parent, you'd add a prop like 'onSearchResultsChange'
+  // and call it here:
+  // useEffect(() => {
+  //   if (onSearchResultsChange) {
+  //     onSearchResultsChange(searchResults);
+  //   }
+  // }, [searchResults, onSearchResultsChange]);
 
-  const router = useRouter();
-  // const isLogg = true;
   return (
     <nav className={styles.topNavbar}>
-      <div className={styles.logo} onClick={() => router.push("/")}>
-        <img width={200} src={"../../../prmptsite.svg"}></img>
-      </div>
+      {isLoggedIn ? (
+        <Link href="/dashboard">
+          <div className={styles.logo}>
+            <img src={"../../../prmptsite.svg"} alt="Logo" />
+          </div>
+        </Link>
+      ) : (
+        <Link href="/">
+          <div className={styles.logo}>
+            <img width={200} src={"../../../prmptsite.svg"} alt="Logo" />
+          </div>
+        </Link>
+      )}
 
       <div className={styles.searchContainer} ref={searchRef}>
         <div className={styles.searchBox}>
@@ -101,16 +116,10 @@ export default function TopNavbar({ onSearch }) {
         {isLoggedIn ? (
           <div className={styles.userAvatar}>
             <FiUser />
-            <img src="public/Logo.svg"></img>
           </div>
         ) : (
-          <Link href="/login">
-            <button
-              className={styles.signupButton}
-              // onClick={() => router.push("/login")}
-            >
-              Logout
-            </button>
+          <Link href="/login" className={styles.signupButton}>
+            Sign In
           </Link>
         )}
       </div>

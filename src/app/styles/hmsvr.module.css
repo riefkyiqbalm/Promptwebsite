@@ -83,7 +83,7 @@
   top: 100%;
   left: 0;
   right: 0;
-  background-color: var(--card-bg);
+  background-color: var(--bg-color);
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   margin-top: 0.5rem;
@@ -105,11 +105,13 @@
 .suggestionItemLoading {
   color: var(--light-text);
   cursor: default;
+  padding: 0.75rem 1rem;
 }
 
-.suggestionItemNo-results {
+.suggestionItemNoResults {
   color: var(--light-text);
   cursor: default;
+  padding: 0.75rem 1rem;
 }
 
 /* Search results count */

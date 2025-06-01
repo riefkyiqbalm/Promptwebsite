@@ -1,4 +1,3 @@
-"use client";
 import type { Metadata } from "next";
 import "../globals.css";
 import TopNavbar from "@/app/components/tdash";
@@ -6,7 +5,8 @@ import LeftNavbar from "@/app/components/LeftNavDash";
 import RightColumn from "@/app/components/RightSidebar";
 import Footer from "@/app/components/Footer";
 import styles from "@/app/styles/hmsvr.module.css";
-import { useRouter } from "next/navigation";
+import { getData } from "@/services";
+// import { useRouter } from "next/navigation";
 
 import { FiActivity, FiPlusCircle } from "react-icons/fi";
 const Metadata: Metadata = {
@@ -14,25 +14,26 @@ const Metadata: Metadata = {
   description: "Dashboard",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const router = useRouter();
+  const res = await getData(`http://localhost:3000/api/blog/prmpt`);
+  // const router = useRouter();
   return (
     <>
       <div className={styles.dashboardLayout}>
-        <TopNavbar />
+        <TopNavbar contentData={res} />
         <div className={styles.dashboardContent}>
           <nav className={styles.LeftSideNavbar}>
             <ul className={styles.navTab}>
-              <li onClick={() => router.push("/dashboard")}>
-                <span className={styles.tabIcon}>
-                  <FiPlusCircle />
-                  <span className={styles.tooltiptext}>Dashboard</span>
-                </span>
-              </li>
+              {/* <li onClick={() => router.push("/dashboard")}> */}
+              <span className={styles.tabIcon}>
+                <FiPlusCircle />
+                <span className={styles.tooltiptext}>Dashboard</span>
+              </span>
+              {/* </li> */}
             </ul>
           </nav>
           <LeftNavbar />

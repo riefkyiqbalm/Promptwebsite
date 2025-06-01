@@ -1,29 +1,30 @@
 "use client";
 import { FiSearch, FiUser, FiX } from "react-icons/fi";
 import useSearch from "./search";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import styles from "../styles/hmsvr.module.css";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 
-export default function TopNavbar({ onSearch }) {
+export default function TopNavbar({ contentData }) {
   const {
     searchQuery,
     suggestions,
     showSuggestions,
     isSearching,
-    isLoggedIn,
+    searchResults,
     setSearchQuery,
     handleSearchChange,
     handleSuggestionClick,
     handleKeyDown,
     setShowSuggestions,
-    searchResults,
-  } = useSearch("");
+  } = useSearch(contentData);
+
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const searchRef = useRef(null);
+  const router = useRouter();
 
-  // Close suggestions when clicking outside
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (searchRef.current && !searchRef.current.contains(event.target)) {
@@ -33,32 +34,33 @@ export default function TopNavbar({ onSearch }) {
 
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, []);
+  }, [setShowSuggestions]);
 
-  // Notify parent component when search results change
-  useEffect(() => {
-    if (onSearch) {
-      onSearch(searchResults);
-    }
-  }, [searchResults]);
-
-  const router = useRouter();
+  // useEffect(() => {
+  //   if (data) { // 'data' is now 'contentData' and is not a function
+  //     data(searchResults);
+  //   }
+  // }, [searchResults]);
+  // If you need to pass search results to a parent, you'd add a prop like 'onSearchResultsChange'
+  // and call it here:
+  // useEffect(() => {
+  //   if (onSearchResultsChange) {
+  //     onSearchResultsChange(searchResults);
+  //   }
+  // }, [searchResults, onSearchResultsChange]);
 
   return (
     <nav className={styles.topNavbar}>
-      {/* <Link href="/">
-        <div className={styles.logo}>TeTrA</div>
-      </Link> */}
       {isLoggedIn ? (
         <Link href="/dashboard">
           <div className={styles.logo}>
-            <img src={"../../../prmptsite.svg"}></img>
+            <img src={"../../../prmptsite.svg"} alt="Logo" />
           </div>
         </Link>
       ) : (
         <Link href="/">
           <div className={styles.logo}>
-            <img width={200} src={"../../../prmptsite.svg"}></img>
+            <img width={200} src={"../../../prmptsite.svg"} alt="Logo" />
           </div>
         </Link>
       )}
