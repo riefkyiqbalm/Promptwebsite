@@ -3,3 +3,46 @@
   justify-content: center;
   align-items: center;
 }
+
+.clipPrompt {
+  padding: 4px 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-family: "Roboto" sans-serif;
+  transition: background-color 0.3s ease, transform 0.2s ease,
+    box-shadow 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+.clipPrompt:hover {
+  background-color: blue;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.clipPrompt:active {
+  background-color: royalblue;
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.clipPrompt .icon {
+  width: 20px;
+  height: 20px;
+  fill: green;
+}
+
+.tooltip {
+  padding: 4px 8px;
+}
+
+@media (max-width: 600px) {
+  .clipPrompt {
+    padding: 8px 15px;
+    font-size: 14px;
+  }
+}

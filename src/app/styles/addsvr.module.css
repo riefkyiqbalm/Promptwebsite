@@ -33,16 +33,11 @@
 }
 
 .icn {
-  /* display: flex; */
   gap: 4;
-  /* margin-top: 1rem; */
   margin-bottom: 1rem;
-  /* max-height: 50%; */
-  /* color: royalblue; */
   font-family: "Open Sans", sans-serif;
   font-size: x-large;
   font-weight: bold;
-  /* text-transform: uppercase; */
   color: transparent;
   background: repeating-linear-gradient(
     -45deg,
@@ -56,7 +51,6 @@
   position: relative;
   display: flex;
   padding: 10px 10px;
-  /* z-index: -1; */
   cursor: pointer;
 }
 

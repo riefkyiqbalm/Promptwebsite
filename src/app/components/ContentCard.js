@@ -1,6 +1,6 @@
 "use client";
 
-import styles from "../styles/crdsvr.module.css";
+import styles from "@/app/styles/crdsvr.module.css";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 

@@ -1,6 +1,6 @@
 "use client";
 
-import styles from "../styles/ldClt.module.css";
+import styles from "@/app/styles/ldClt.module.css";
 
 export default function loadCard({ data }) {
   return (

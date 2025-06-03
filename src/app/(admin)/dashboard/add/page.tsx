@@ -1,10 +1,16 @@
 import ContentCard from "@/app/components/ContentCard";
 import styles from "@/app/styles/addsvr.module.css";
 import sty from "@/app/styles/crdsvr.module.css";
-import { Datepicker } from "flowbite-react";
+import DatepickerComponent from "@/app/components/datepicker";
 import GoBackButton from "@/app/components/goback";
+import Input from "@/app/components/inputArea";
+import CombinedListPicker from "@/app/components/listpicker";
 
-// type promptData = { params: { slug: string[] } };
+interface SelectItemData {
+  id: number;
+  name: string;
+  details: string;
+}
 
 async function getData() {
   const res = await fetch("http://localhost:3000/api/admin/user", {
@@ -19,9 +25,34 @@ async function getData() {
   }
   return res.json();
 }
+async function getItemsFromApi(): Promise<SelectItemData[]> {
+  try {
+    // Use `fetch` to call your internal API route
+    const response = await fetch("http://localhost:3000/api/selectitems", {
+      // `cache: 'no-store'` ensures data is always fresh, not cached by Next.js or browser
+      // For static data, you might use `cache: 'force-cache'` or `revalidate: 3600`
+      cache: "no-store",
+    });
+
+    if (!response.ok) {
+      const errorText = await response.text();
+      console.log(`Failed to fetch items: ${response.status} - ${errorText}`);
+      throw new Error(`Failed to fetch items: ${response.statusText}`);
+    }
+
+    const items: SelectItemData[] = await response.json();
+    return items;
+  } catch (error) {
+    console.error("Error in getItemsFromApi:", error);
+    // Return an empty array or handle the error gracefully
+    return [];
+  }
+}
 
 export default async function Dashboard() {
   // const { params } = props;
+  const allItems = await getItemsFromApi();
+  const itemsForPicker = allItems.map((item) => item.name);
   const prompt = await getData();
   return (
     <div className={styles.dshBlck}>
@@ -29,37 +60,38 @@ export default async function Dashboard() {
         <GoBackButton />
         <div>
           <form className="flex flex-col">
-            <input
-              className="w-xl h-8 outline-none transition-all resize-none"
-              placeholder="Prompt Title"
-            ></input>
-            <hr></hr>
-            <textarea
-              className=" h-24 outline-none transition-all resize-none"
-              placeholder="Prompt Description"
-            ></textarea>
-            <hr></hr>
-            <textarea
+            <label
+              htmlFor="auto-input"
+              className="block text-xl font-bold text-gray-700"
+            >
+              Title
+            </label>
+            <Input
+              className="text-shadow-slate-500"
+              placeholder="Give Title To Your's Prompt"
+              rows={0}
+            />
+            <label
+              htmlFor="auto-input"
+              className="block text-xl font-bold text-gray-700"
+            >
+              Description
+            </label>
+            <Input
+              placeholder="A Brief Description of Your's Prompt"
               rows={4}
-              className="h-24 outline-none transition-all resize-none h-8rem"
-              placeholder="Send Your Prompt"
-            ></textarea>
-            <hr></hr>
-            <div className="flex justify-between items-center">
-              <span id="charCount" className="text-sm text-gray-500">
-                0/500
-              </span>
-            </div>
+            />
+            <label
+              htmlFor="auto-input"
+              className="block text-xl font-bold text-gray-700"
+            >
+              Prompt
+            </label>
+            <Input placeholder="Your's Prompt" rows={4} />
           </form>
         </div>
         <div className="flex justify-around items-center">
-          <label>Choose a Field:</label>
-          <select name="mainfield" id="field">
-            <option value="Engineering">Engineering</option>
-            <option value="Films">Films</option>
-            <option value="Images">Images</option>
-            <option value="Sofware">Software</option>
-          </select>
+          <CombinedListPicker items={itemsForPicker}></CombinedListPicker>
           <label>Choose a engine:</label>
           <select name="AIengine" id="engine">
             <option value="Chat-GpT">Chat-GpT</option>
@@ -67,7 +99,7 @@ export default async function Dashboard() {
             <option value="Midjourney">Midjourney</option>
             <option value="Gemini">Gemini</option>
           </select>
-          <Datepicker className={styles.datepick} />
+          <DatepickerComponent />
           <button className={styles.postButton}>Post</button>
         </div>
       </section>

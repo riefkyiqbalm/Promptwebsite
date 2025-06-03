@@ -2,7 +2,7 @@
 import { FiSearch, FiUser, FiX } from "react-icons/fi";
 import useSearch from "./search";
 import { useEffect, useRef, useState } from "react";
-import styles from "../styles/hmsvr.module.css";
+import styles from "@/app/styles/hmsvr.module.css";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 
@@ -35,19 +35,6 @@ export default function TopNavbar({ contentData }) {
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [setShowSuggestions]);
-
-  // useEffect(() => {
-  //   if (data) { // 'data' is now 'contentData' and is not a function
-  //     data(searchResults);
-  //   }
-  // }, [searchResults]);
-  // If you need to pass search results to a parent, you'd add a prop like 'onSearchResultsChange'
-  // and call it here:
-  // useEffect(() => {
-  //   if (onSearchResultsChange) {
-  //     onSearchResultsChange(searchResults);
-  //   }
-  // }, [searchResults, onSearchResultsChange]);
 
   return (
     <nav className={styles.topNavbar}>

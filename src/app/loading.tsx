@@ -6,13 +6,15 @@ export default function Loading() {
     id: index + 1,
   }));
   return (
-    <div className={styles.Grd}>
-      {data.length > 0 &&
-        data.map((prom: any) => (
-          <div key={prom.id}>
-            <Load data={prom}></Load>
-          </div>
-        ))}
-    </div>
+    <>
+      <div className={styles.Grd}>
+        {data.length > 0 &&
+          data.map((prom: any) => (
+            <div key={prom.id}>
+              <Load data={prom}></Load>
+            </div>
+          ))}
+      </div>
+    </>
   );
 }
