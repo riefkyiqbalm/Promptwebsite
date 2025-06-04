@@ -42,7 +42,7 @@ export default function ForgotPasswordPage() {
     }
   };
   return (
-    <div className={styles.authContainer}>
+    <div>
       <form onSubmit={handleSubmit} className={styles.authForm}>
         <img
           src={"../../../../prmptsite.svg"}

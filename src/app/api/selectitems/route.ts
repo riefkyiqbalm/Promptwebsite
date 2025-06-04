@@ -7,8 +7,8 @@ import selectData from '@/app/lib/select.json'; // Adjust this path if your data
 // Define an interface for the structure of items within your select.json
 interface SelectItemData {
     id: number;
-    name: string;
-    details: string;
+    field: string;
+    engine: string;
 }
 
 /**

@@ -21,16 +21,17 @@
 }
 .contentCard {
   background-color: var(--card-bg);
+  border-width: 1px;
   border-radius: 10px;
   padding: 1.5rem;
-  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.8);
+  border-color: black;
   transition: transform 0.2s, box-shadow 0.2s;
   min-height: 100%;
 }
 
 .contentCard:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transform: scale(1.08);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
 .cardHeader {
@@ -73,7 +74,7 @@
   cursor: pointer;
 }
 
-.cardBadgeImages {
+.cardBadgeImage {
   font-size: 0.75rem;
   font-weight: 600;
   padding: 0.25rem 0.75rem;
@@ -145,7 +146,7 @@
 }
 
 .cardPrompt p {
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   line-height: 1.5;
 }
 
@@ -172,4 +173,16 @@
   padding: 2rem;
   color: var(--light-text);
   font-size: 1.1rem;
+}
+.cardPricetag {
+  font-family: "Roboto", monospace;
+  font-size: large;
+  font-weight: bold;
+  margin-right: 11rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  color: #079f46;
+  cursor: pointer;
 }

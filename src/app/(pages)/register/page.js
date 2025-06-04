@@ -30,13 +30,13 @@ export default function RegisterPage() {
   };
   return (
     <>
-      <div className={styles.authContainer}>
+      <div>
         <form onSubmit={handleSubmit} className={styles.authForm}>
           <img
             src={"../../../../prmptsite.svg"}
             alt="Logo"
             className={styles.lgcard}
-            width={400}
+            width={100}
           />
           <h2 className={styles.authTitle}>Register</h2>
 
@@ -105,19 +105,14 @@ export default function RegisterPage() {
               setShowPassword={setShowPassword}
             />
           </div>
+          <div className="flex gap-8">
+            <button type="submit" className={styles.authButton}>
+              {loading ? "Registering..." : "Register"}
+            </button>
 
-          <button
-            type="submit"
-            className={styles.authButton}
-            disabled={loading}
-          >
-            {loading ? "Registering..." : "Register"}
-          </button>
-
+            <SocialAuth action="register" />
+          </div>
           <div className={styles.authDivider}>OR</div>
-
-          <SocialAuth action="register" />
-
           <div className={styles.authSwitch}>
             Already have an account?{" "}
             <Link href="../login" className={styles.authSwitchLink}>

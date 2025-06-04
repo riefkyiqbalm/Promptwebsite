@@ -1,13 +1,13 @@
 [
   {
     "id": 1,
-    "name": "Engineering",
-    "details": "This is Engineering Prompt techniques"
+    "field": "Engineering",
+    "engine": "Deepseek"
   },
   {
     "id": 2,
-    "name": "Software",
-    "details": "Software Prompt techniques"
+    "field": "Software",
+    "engine": "Chat-GPT"
   },
-  { "id": 3, "name": "Film", "details": "Prompt techniques for film making" }
+  { "id": 3, "field": "Film", "engine": "OpenAI" }
 ]

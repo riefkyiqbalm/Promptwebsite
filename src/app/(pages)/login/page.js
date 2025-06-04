@@ -27,13 +27,13 @@ export default function LoginForm() {
 
   return (
     <>
-      <div className={styles.authContainer}>
+      <div>
         <form onSubmit={handleSubmit} className={styles.authForm}>
           <img
             src={"../../../../prmptsite.svg"}
             alt="Logo"
             className={styles.lgcard}
-            width={400}
+            width={100}
           />
           <h2 className={styles.authTitle}>Login</h2>
 
@@ -78,18 +78,14 @@ export default function LoginForm() {
               Forgot password?
             </Link>
           </div>
-
-          <button
-            type="submit"
-            className={styles.authButton}
-            disabled={loading}
-          >
-            {loading ? "Logging in..." : "Login"}
-          </button>
+          <div className="flex gap-8">
+            <button type="submit" className={styles.authButton}>
+              {loading ? "Logging in..." : "Login"}
+            </button>
+            <SocialAuth action="login" />
+          </div>
 
           <div className={styles.authDivider}>OR</div>
-
-          <SocialAuth action="login" />
 
           <div className={styles.authSwitch}>
             Don't have an account?{" "}

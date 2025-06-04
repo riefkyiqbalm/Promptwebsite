@@ -339,7 +339,6 @@
   /* z-index: -1; */
   border-radius: 5px;
   box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.3);
-  /* cursor: pointer; */
 }
 
 .adBox {
@@ -355,9 +354,6 @@
 .dashboardPage {
   padding: 0;
   display: flex;
-  /* grid-template-columns: 1fr 2fr; */
-  /* margin-right: 4rem; */
-  /* margin-left: 2rem; */
 }
 
 .breadcrumbs {

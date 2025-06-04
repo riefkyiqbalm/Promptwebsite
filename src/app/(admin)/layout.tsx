@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "../globals.css";
-import TopNavbar from "@/app/components/tdash";
-import LeftNavbar from "@/app/components/LeftNavDash";
+import TopNavbar from "@/app/components/TopNavbar";
+import LeftNavbar from "@/app/components/LeftSideNavbar";
 import RightColumn from "@/app/components/RightSidebar";
 import Footer from "@/app/components/Footer";
 import styles from "@/app/styles/hmsvr.module.css";

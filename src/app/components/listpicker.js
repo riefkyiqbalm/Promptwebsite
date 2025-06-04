@@ -1,125 +1,107 @@
 "use client"; // This component must be a Client Component
 
 import { useState } from "react";
+import { useRouter, useSearchParams, usePathname } from "next/navigation";
 
-const CombinedListPicker = ({ items }) => {
+const CombinedListPicker = ({ property, label }) => {
   // State to keep track of the currently selected item in the UI
-  const [selectedItem, setSelectedItem] = useState(null);
+  const [selectedItem, setSelectedItem] = useState(""); // Initialize with empty string for select
   // State to manage loading status during the API call
-  const [isLoading, setIsLoading] = useState(false);
+  // const [isLoading, setIsLoading] = useState(false);
   // State to store any error messages from the API call
-  const [error, setError] = useState(null);
-  // State to store the server response message
-  const [serverMessage, setServerMessage] = useState(null);
+  // const [error, setError] = useState(null);
+  // State to store the server response message (not used in the provided render, but kept for context)
+  // const [serverMessage, setServerMessage] = useState(null);
+  // State for the custom message box (not used in the provided render, but kept for context)
+  // const [messageBox, setMessageBox] = useState({
+  //   visible: false,
+  //   message: "",
+  //   type: "",
+  // });
+
+  const router = useRouter();
+  const searchParams = useSearchParams();
+  const pathname = usePathname();
 
   /**
-   * handleItemClick
-   * This function is executed when an item in the list is clicked.
-   * It updates the local UI state and then makes a POST request
-   * to the /api/select-item API route.
-   *
-   * @param {string} item The item selected by the user.
+   * @param {Event} event The change event from the select element.
    */
-  const handleItemClick = async (item) => {
+  const selectitem = (event) => {
+    const item = event.target.value;
+    // Don't process if the placeholder option is selected or if an API call is in progress
+    if (!item) {
+      setSelectedItem(""); // Reset selectedItem state if placeholder is chosen
+      return;
+    }
     // Update the UI to show the selected item immediately
     setSelectedItem(item);
-    setIsLoading(true); // Start loading
-    setError(null); // Clear previous errors
-    setServerMessage(null); // Clear previous messages
-
-    try {
-      // Make the POST request to the /api/select-item route.
-      // Use a relative path for client-side fetches if the API is on the same domain.
-      const response = await fetch("api/select", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ selectedItem: item }),
-      });
-
-      const result = await response.json();
-
-      if (!response.ok) {
-        // If the API response indicates an error (e.g., 4xx, 5xx status)
-        throw new Error(
-          result.message || "Failed to process selection on server."
-        );
-      }
-
-      // Set the success message from the server
-      setServerMessage(result.message);
-      console.log("API Route Result:", result);
-
-      // Optionally, you could provide more detailed feedback based on result.details
-      if (result?.details?.details) {
-        // Using alert for demonstration, consider a more user-friendly notification system
-        alert(
-          `Server responded: ${result.message}\nDetails: ${result.details.details}`
-        );
-      } else {
-        alert(`Server responded: ${result.message}`);
-      }
-    } catch (err) {
-      console.error("Error calling /api/selectitems:", err);
-      setError(err.message || "An unknown error occurred.");
-      alert(`Error: ${err.message || "An unknown error occurred."}`); // Provide user feedback
-    } finally {
-      setIsLoading(false); // End loading
-    }
   };
+  // const LoadingSpinner = () => (
+  //   <p className="mt-4 text-center text-blue-600 flex items-center justify-center">
+  //     <svg
+  //       className="animate-spin -ml-1 mr-3 h-5 w-5 text-blue-600"
+  //       xmlns="http://www.w3.org/2000/svg"
+  //       fill="none"
+  //       viewBox="0 0 24 24"
+  //     >
+  //       <circle
+  //         className="opacity-25"
+  //         cx="12"
+  //         cy="12"
+  //         r="10"
+  //         stroke="currentColor"
+  //         strokeWidth="4"
+  //       ></circle>
+  //       <path
+  //         className="opacity-75"
+  //         fill="currentColor"
+  //         d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+  //       ></path>
+  //     </svg>
+  //     Processing selection...
+  //   </p>
+  // );
 
   return (
-    <div className="p-4 max-w-sm mx-auto bg-white rounded-lg shadow-md">
-      <h2 className="text-xl font-semibold mb-4 text-gray-800">
-        Select an Item
-      </h2>
-      <ul className="border border-gray-200 rounded-md overflow-hidden">
-        {/* Map over the `items` prop to render each list item */}
-        {items.map((item, index) => (
-          <li
-            key={index} // Using index as key for simplicity; a unique ID is preferred for stable lists
-            className={`
-              p-3 cursor-pointer transition-colors duration-200
-              ${
-                selectedItem === item
-                  ? "bg-blue-500 text-white" // Styling for the selected item
-                  : "bg-gray-50 hover:bg-gray-100 text-gray-700" // Styling for unselected items
-              }
-              ${index < items.length - 1 ? "border-b border-gray-200" : ""}
-            `}
-            onClick={() => handleItemClick(item)} // Handle click event
-            tabIndex={0} // Make list items focusable for keyboard navigation
-            onKeyDown={(e) => {
-              // Handle keyboard events for accessibility
-              if (e.key === "Enter" || e.key === " ") {
-                handleItemClick(item);
-              }
-            }}
+    <div className=" block gap-20 mt-4">
+      <label className="text-xl font-medium text-gray-800 font-mono ">
+        {label}
+      </label>
+      {/*Selection */}
+      <div className="p-4 mx-auto bg-white rounded-lg font-mono">
+        <div className="w-30 relative items-center justify-center">
+          <select
+            value={selectedItem || ""} // Control the select's value with state
+            onChange={selectitem}
+            className="w-32 px-8 py-2 pr-8 rounded-md border-8 border-white bg-white text-gray-700 shadow-sm focus:outline-none focus:ring-2 focus:ring-white focus:border-white appearance-none cursor-pointer"
           >
-            {item}
-          </li>
-        ))}
-      </ul>
-
-      {/* Display feedback based on loading, error, or success */}
-      {isLoading && (
-        <p className="mt-4 text-blue-600">Processing selection...</p>
-      )}
-      {error && <p className="mt-4 text-red-600">Error: {error}</p>}
-      {!isLoading && !error && selectedItem && (
-        <>
-          <p className="mt-4 text-gray-700">
-            Selected:{" "}
-            <span className="font-medium text-blue-600">{selectedItem}</span>
-          </p>
-          {serverMessage && (
-            <p className="mt-2 text-green-600 text-sm">
-              Server: {serverMessage}
-            </p>
-          )}
-        </>
-      )}
+            <option value="field" disabled>
+              Select
+            </option>
+            {property.map((item) => (
+              <option key={item} value={item}>
+                {item}
+              </option>
+            ))}
+          </select>
+          {/* Custom arrow for select dropdown */}
+          <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+            <svg
+              className="fill-current h-4 w-4"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+            >
+              <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+            </svg>
+          </div>
+        </div>
+        {/* Display feedback based on loading, error */}
+        {/* {isLoading ? (
+          <LoadingSpinner />
+        ) : error ? (
+          <p className="mt-4 text-red-600 text-center">Error: {error}</p>
+        ) : null} */}
+      </div>
     </div>
   );
 };

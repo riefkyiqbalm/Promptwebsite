@@ -6,7 +6,9 @@
     "engine": "Deepseek",
     "Description": "A comprehensive guide to building scalable systems",
     "title": "System Architecture Patterns",
-    "content": "Explain the microservices architecture pattern with examples"
+    "content": "Explain the microservices architecture pattern with examples",
+    "currency": "IDR",
+    "price": "10.000"
   },
   {
     "id": 2,
@@ -15,7 +17,9 @@
     "engine": "OpenAI",
     "Description": "A comprehensive guide to writing effective documentation",
     "title": "Documentation Best Practices",
-    "content": "Explain the importance of documentation in software development and provide examples of good documentation practices"
+    "content": "Explain the importance of documentation in software development and provide examples of good documentation practices",
+    "currency": "IDR",
+    "price": "12.000"
   },
   {
     "id": 3,
@@ -24,7 +28,9 @@
     "engine": "Midjourney",
     "Description": "Development of a new film project",
     "title": "Film Project Development",
-    "content": "Outline the steps involved in developing a new film project, from concept to production"
+    "content": "Outline the steps involved in developing a new film project, from concept to production",
+    "currency": "IDR",
+    "price": "12.200"
   },
   {
     "id": 4,
@@ -33,16 +39,20 @@
     "engine": "DALL-E",
     "Description": "A guide to creating Software for software applications",
     "title": "Software Development",
-    "content": "Describe the process of creating a Software for a popular software application, including tools and best practices"
+    "content": "Describe the process of creating a Software for a popular software application, including tools and best practices",
+    "currency": "IDR",
+    "price": "12.000"
   },
   {
     "id": 5,
-    "segment": "Images",
+    "segment": "Image",
     "date": "2023-05-15T10:30:00Z",
     "engine": "DALL-E",
     "Description": "A guide to creating images using AI",
     "title": "Image Generation",
-    "content": "Explain the process of generating images using AI, including the tools and techniques involved"
+    "content": "Explain the process of generating images using AI, including the tools and techniques involved",
+    "currency": "IDR",
+    "price": "12.000"
   },
   {
     "id": 6,
@@ -51,7 +61,9 @@
     "engine": "OpenAI",
     "Description": "A comprehensive guide to writing effective documentation",
     "title": "Documentation Best Practices",
-    "content": "Explain the importance of documentation in software development and provide examples of good documentation practices"
+    "content": "Explain the importance of documentation in software development and provide examples of good documentation practices",
+    "currency": "IDR",
+    "price": "12.000"
   },
   {
     "id": 7,
@@ -60,7 +72,9 @@
     "engine": "Deepseek",
     "Description": "A comprehensive guide to building scalable systems",
     "title": "System Architecture Patterns",
-    "content": "Explain the microservices architecture pattern with examples"
+    "content": "Explain the microservices architecture pattern with examples",
+    "currency": "IDR",
+    "price": "12.000"
   },
   {
     "id": 8,
@@ -69,7 +83,9 @@
     "engine": "Midjourney",
     "Description": "Development of a new film project",
     "title": "Film Project Development",
-    "content": "Outline the steps involved in developing a new film project, from concept to production"
+    "content": "Outline the steps involved in developing a new film project, from concept to production",
+    "currency": "IDR",
+    "price": "12.000"
   },
   {
     "id": 9,
@@ -78,16 +94,20 @@
     "engine": "DALL-E",
     "Description": "A guide to creating Software for software applications",
     "title": "Software Development",
-    "content": "Describe the process of creating a Software for a popular software application, including tools and best practices"
+    "content": "Describe the process of creating a Software for a popular software application, including tools and best practices",
+    "currency": "IDR",
+    "price": "12.000"
   },
   {
     "id": 10,
-    "segment": "Images",
+    "segment": "Image",
     "date": "2023-05-15T10:30:00Z",
     "engine": "DALL-E",
     "Description": "A guide to creating images using AI",
     "title": "Image Generation",
-    "content": "Explain the process of generating images using AI, including the tools and techniques involved"
+    "content": "Explain the process of generating images using AI, including the tools and techniques involved",
+    "currency": "IDR",
+    "price": "12.000"
   },
   {
     "id": 11,
@@ -96,7 +116,9 @@
     "engine": "OpenAI",
     "Description": "A comprehensive guide to writing effective documentation",
     "title": "Documentation Best Practices",
-    "content": "Explain the importance of documentation in software development and provide examples of good documentation practices"
+    "content": "Explain the importance of documentation in software development and provide examples of good documentation practices",
+    "currency": "IDR",
+    "price": "12.000"
   },
   {
     "id": 12,
@@ -105,7 +127,9 @@
     "engine": "Deepseek",
     "Description": "A comprehensive guide to building scalable systems",
     "title": "System Architecture Patterns",
-    "content": "Explain the microservices architecture pattern with examples"
+    "content": "Explain the microservices architecture pattern with examples",
+    "currency": "IDR",
+    "price": "12.000"
   },
   {
     "id": 13,
@@ -114,7 +138,9 @@
     "engine": "Midjourney",
     "Description": "Development of a new film project",
     "title": "Film Project Development",
-    "content": "Outline the steps involved in developing a new film project, from concept to production"
+    "content": "Outline the steps involved in developing a new film project, from concept to production",
+    "currency": "IDR",
+    "price": "12.000"
   },
   {
     "id": 14,
@@ -123,16 +149,20 @@
     "engine": "DALL-E",
     "Description": "A guide to creating Software for software applications",
     "title": "Software Development",
-    "content": "Describe the process of creating a Software for a popular software application, including tools and best practices"
+    "content": "Describe the process of creating a Software for a popular software application, including tools and best practices",
+    "currency": "IDR",
+    "price": "12.000"
   },
   {
     "id": 15,
-    "segment": "Images",
+    "segment": "Image",
     "date": "2023-05-15T10:30:00Z",
     "engine": "DALL-E",
     "Description": "A guide to creating images using AI",
     "title": "Image Generation",
-    "content": "Explain the process of generating images using AI, including the tools and techniques involved"
+    "content": "Explain the process of generating images using AI, including the tools and techniques involved",
+    "currency": "IDR",
+    "price": "12.000"
   },
   {
     "id": 16,
@@ -141,7 +171,9 @@
     "engine": "OpenAI",
     "Description": "A comprehensive guide to writing effective documentation",
     "title": "Documentation Best Practices",
-    "content": "Explain the importance of documentation in software development and provide examples of good documentation practices"
+    "content": "Explain the importance of documentation in software development and provide examples of good documentation practices",
+    "currency": "IDR",
+    "price": "12.000"
   },
   {
     "id": 17,
@@ -150,7 +182,9 @@
     "engine": "Deepseek",
     "Description": "A comprehensive guide to building scalable systems",
     "title": "System Architecture Patterns",
-    "content": "Explain the microservices architecture pattern with examples"
+    "content": "Explain the microservices architecture pattern with examples",
+    "currency": "IDR",
+    "price": "12.000"
   },
   {
     "id": 18,
@@ -159,7 +193,9 @@
     "engine": "Midjourney",
     "Description": "Development of a new film project",
     "title": "Film Project Development",
-    "content": "Outline the steps involved in developing a new film project, from concept to production"
+    "content": "Outline the steps involved in developing a new film project, from concept to production",
+    "currency": "IDR",
+    "price": "12.000"
   },
   {
     "id": 19,
@@ -168,15 +204,19 @@
     "engine": "DALL-E",
     "Description": "A guide to creating Software for software applications",
     "title": "Software Development",
-    "content": "Describe the process of creating a Software for a popular software application, including tools and best practices"
+    "content": "Describe the process of creating a Software for a popular software application, including tools and best practices",
+    "currency": "IDR",
+    "price": "12.000"
   },
   {
     "id": 20,
-    "segment": "Images",
+    "segment": "Image",
     "date": "2023-05-15T10:30:00Z",
     "engine": "DALL-E",
     "Description": "A guide to creating images using AI",
     "title": "Image Generation",
-    "content": "Explain the process of generating images using AI, including the tools and techniques involved"
+    "content": "Explain the process of generating images using AI, including the tools and techniques involved",
+    "currency": "IDR",
+    "price": "12.000"
   }
 ]

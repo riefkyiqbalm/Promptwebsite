@@ -41,7 +41,7 @@ export default function TopNavbar({ contentData }) {
       {isLoggedIn ? (
         <Link href="/dashboard">
           <div className={styles.logo}>
-            <img src={"../../../prmptsite.svg"} alt="Logo" />
+            <img width={200} src={"../../../prmptsite.svg"} alt="Logo" />
           </div>
         </Link>
       ) : (

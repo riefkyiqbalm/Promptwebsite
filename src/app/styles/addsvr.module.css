@@ -22,7 +22,6 @@
   margin-left: 1rem;
 }
 .secOne {
-  color: green;
   display: block;
   /* border: 5px dashed; */
   /* min-height: 100%; */
@@ -35,7 +34,7 @@
 .icn {
   gap: 4;
   margin-bottom: 1rem;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Open-sans", sans-serif;
   font-size: x-large;
   font-weight: bold;
   color: transparent;
@@ -59,7 +58,7 @@
   position: absolute;
   left: 2.5rem;
   bottom: 4px;
-  width: 78%;
+  width: 65%;
   height: 12px;
   background-color: royalblue; /* #5ca2d1*/
   z-index: -1;
@@ -119,11 +118,6 @@
   color: black;
   /* weight: bold; */
 }
-.secTw {
-  /* color: blue; */
-  border: 1px solid;
-  border-color: red;
-}
 
 textarea::placeholder {
   bottom: 10px;
@@ -152,6 +146,9 @@ textarea::placeholder {
   border-radius: 12px;
 }
 
-.datepick {
+.pick {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   padding: 1rem;
 }

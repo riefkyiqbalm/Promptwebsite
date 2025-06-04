@@ -85,7 +85,7 @@ const Tab = ({ contents }) => {
 
   return (
     <>
-      <div className={styles.contentCard}>
+      <div className="grid grid-cols-auto-fill-minmax-300px-1fr gap-4 mt-24 px-8 ml-18 min-w-[800px] mb-4">
         <div className="relative justify-center items-center h-fit">
           {contents.map((cont) => (
             <h1
@@ -112,51 +112,46 @@ const Tab = ({ contents }) => {
               </button>
             ))}
           </div>
-
           <br></br>
-
           {/* Output Textarea */}
           <div className="mb-4">
-            {contents.map((cont) => (
-              <label
-                key={cont.id}
-                htmlFor="output"
-                className="flex gap-147 h-12"
+            <div className="flex justify-between border-8 border-white dark:border-b-blue-950">
+              {contents.map((cont) => (
+                <label key={cont.id} htmlFor="output">
+                  Prompt which develop with {cont.engine}
+                </label>
+              ))}
+              <Tooltip
+                placement="bottom"
+                content="Copy Prompt"
+                className={sty.tooltip}
               >
-                Prompt which develop with {cont.engine}
-                <Tooltip
-                  placement="bottom"
-                  content="Copy Prompt"
-                  className={sty.tooltip}
+                <button
+                  onClick={handleCopyClick}
+                  className="rounded-md p-2 px-2.5 inline-flex gap-1.5 items-center justify-center h-8 w-25"
+                  style={{ backgroundColor: "royalblue" }}
                 >
-                  <button
-                    onClick={handleCopyClick}
-                    className="rounded-md p-2 px-2.5 inline-flex gap-1.5 items-center justify-center h-8 w-25"
-                    style={{ backgroundColor: "royalblue" }}
-                  >
-                    {isCopied ? (
-                      <IoCheckmarkDoneSharp className="text-amber-300 dark:text-amber-200 text-xl" />
-                    ) : (
-                      <AiOutlinePaperClip className="text-white text-xl" />
-                    )}
-                    {isCopied ? (
-                      <span className="inline-flex items-center">
-                        <span className="text-l font-semibold text-amber-300 dark:text-amber-200">
-                          Copied!
-                        </span>
+                  {isCopied ? (
+                    <IoCheckmarkDoneSharp className="text-amber-300 dark:text-amber-200 text-xl" />
+                  ) : (
+                    <AiOutlinePaperClip className="text-white text-xl" />
+                  )}
+                  {isCopied ? (
+                    <span className="inline-flex items-center">
+                      <span className="text-l font-semibold text-amber-300 dark:text-amber-200">
+                        Copied!
                       </span>
-                    ) : (
-                      <span className="inline-flex items-center">
-                        <span className="text-l font-semibold text-white">
-                          Copy
-                        </span>
+                    </span>
+                  ) : (
+                    <span className="inline-flex items-center">
+                      <span className="text-l font-semibold text-white">
+                        Copy
                       </span>
-                    )}
-                  </button>
-                </Tooltip>
-              </label>
-            ))}
-
+                    </span>
+                  )}
+                </button>
+              </Tooltip>
+            </div>
             <textarea
               id="output"
               rows="12"

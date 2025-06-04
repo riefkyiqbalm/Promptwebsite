@@ -17,7 +17,7 @@ import Datepicker from "flowbite-datepicker/Datepicker";
  * This component now includes specific styling for the input field
  * and its surrounding elements, as provided by the user.
  */
-const DatepickerComponent = () => {
+const FlowbiteDatePicker = () => {
   // Create a ref to attach to the input element
   const datepickerRef = useRef(null);
   // Create a ref to store the Datepicker instance
@@ -65,10 +65,10 @@ const DatepickerComponent = () => {
   }, []); // Empty dependency array ensures this runs only once on mount and unmount
 
   return (
-    <div className="flex gap-4 p-4 max-w-sm mx-auto">
-      <p className="font-semibold font-mono text-l mb-4">Select a Date</p>
+    <div className="block gap-20 p-4 max-w-sm mx-auto font-mono">
+      <label className="text-xl font-medium text-gray-700">Select Date: </label>
       {/* Applied the provided styling for the datepicker container */}
-      <div className="border border-black rounded-lg relative max-w-sm">
+      <div className="rounded-lg relative max-w-sm border-4 border-white shadow-md">
         <div className="absolute inset-y-0 start-35 flex items-center ps-3.5 pointer-events-none">
           {/* Calendar icon (example SVG) */}
           <svg
@@ -84,7 +84,7 @@ const DatepickerComponent = () => {
         <input
           type="text"
           ref={datepickerRef}
-          className="h-8 bg-gray-50 border-4 border-white text-gray-900 text-sm rounded-lg block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
+          className="h-8 bg-white border-4 border-white text-gray-900 text-sm rounded-lg block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
           placeholder="Select date"
         />
       </div>
@@ -92,4 +92,4 @@ const DatepickerComponent = () => {
   );
 };
 
-export default DatepickerComponent;
+export default FlowbiteDatePicker;

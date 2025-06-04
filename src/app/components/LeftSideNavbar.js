@@ -13,6 +13,16 @@ export default function LeftSideNavbar() {
   return (
     <nav className={styles.leftSideNavbar}>
       <ul className={styles.navTabs}>
+        {isLoginIn ? (
+          <div className={styles.navTab}>
+            <li onClick={() => router.push("/dashboard/add")}>
+              <span className={styles.tabIcon}>
+                <FiPlusCircle />
+                <span className={styles.tooltiptext}>Add Prompt</span>
+              </span>
+            </li>
+          </div>
+        ) : null}
         <div className={styles.navTab}>
           <li onClick={() => router.push("/engineering")}>
             <span className={styles.tabIcon}>

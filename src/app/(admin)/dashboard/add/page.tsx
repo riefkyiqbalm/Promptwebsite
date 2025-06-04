@@ -1,15 +1,15 @@
 import ContentCard from "@/app/components/ContentCard";
 import styles from "@/app/styles/addsvr.module.css";
 import sty from "@/app/styles/crdsvr.module.css";
-import DatepickerComponent from "@/app/components/datepicker";
 import GoBackButton from "@/app/components/goback";
 import Input from "@/app/components/inputArea";
 import CombinedListPicker from "@/app/components/listpicker";
+import FlowbiteDatepicker from "@/app/components/datepicker";
 
 interface SelectItemData {
   id: number;
-  name: string;
-  details: string;
+  field: string;
+  engine: string;
 }
 
 async function getData() {
@@ -52,7 +52,8 @@ async function getItemsFromApi(): Promise<SelectItemData[]> {
 export default async function Dashboard() {
   // const { params } = props;
   const allItems = await getItemsFromApi();
-  const itemsForPicker = allItems.map((item) => item.name);
+  const itemsFieldPicker = allItems.map((item) => item.field);
+  const itemsEnginePicker = allItems.map((item) => item.engine);
   const prompt = await getData();
   return (
     <div className={styles.dshBlck}>
@@ -90,16 +91,10 @@ export default async function Dashboard() {
             <Input placeholder="Your's Prompt" rows={4} />
           </form>
         </div>
-        <div className="flex justify-around items-center">
-          <CombinedListPicker items={itemsForPicker}></CombinedListPicker>
-          <label>Choose a engine:</label>
-          <select name="AIengine" id="engine">
-            <option value="Chat-GpT">Chat-GpT</option>
-            <option value="DeepSeek">DeepSeek</option>
-            <option value="Midjourney">Midjourney</option>
-            <option value="Gemini">Gemini</option>
-          </select>
-          <DatepickerComponent />
+        <div className={styles.pick}>
+          <CombinedListPicker property={itemsFieldPicker} label="Field: " />
+          <CombinedListPicker property={itemsEnginePicker} label="Engine: " />
+          <FlowbiteDatepicker />
           <button className={styles.postButton}>Post</button>
         </div>
       </section>

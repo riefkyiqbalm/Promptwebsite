@@ -7,7 +7,7 @@ import path from 'path';     // Node.js Path module for resolving file paths
 // The user specified that the JSON content path is "@/app/lib/a".
 // Assuming this means the 'contentbyuser.json' file should reside within
 // a directory structure like 'project_root/app/lib/a'.
-const CONTENT_FILE_PATH = path.join(process.cwd(), 'app', 'lib', 'contentbyuser.json');
+const CONTENT_FILE_PATH = path.join(process.cwd(), 'src', 'app', 'lib', 'contentbyuser.json');
 const CONTENT_DIR_PATH = path.dirname(CONTENT_FILE_PATH); // Get the directory path
 
 /**
