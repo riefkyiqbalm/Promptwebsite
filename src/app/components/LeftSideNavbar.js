@@ -1,91 +1,124 @@
 "use client";
 
-import { FiGrid, FiSettings, FiPlusCircle } from "react-icons/fi";
-import { TbBriefcase, TbPhotoAi } from "react-icons/tb";
-import { TiVideoOutline } from "react-icons/ti";
-import { HiOutlineWrenchScrewdriver } from "react-icons/hi2";
-import { BiCodeBlock } from "react-icons/bi";
-import styles from "@/app/styles/hmsvr.module.css";
+import styles from "@/app/styles/snavsvr.module.css";
 import { useRouter } from "next/navigation";
+import { useState } from "react";
 export default function LeftSideNavbar() {
+  const [isExpanded, setIsExpanded] = useState(false);
   const router = useRouter();
-  const isLoginIn = false;
+  const isLoginIn = true;
   return (
-    <nav className={styles.leftSideNavbar}>
-      <ul className={styles.navTabs}>
+    <div className={`${styles.sideNav} ${isExpanded ? styles.expanded : ""}`}>
+      <button
+        className={styles.expandButton}
+        onMouseEnter={() => setIsExpanded(true)}
+        onMouseLeave={() => setIsExpanded(false)}
+      >
+        {isExpanded ? "" : ""}
+      </button>
+      <nav className={styles.navContent}>
         {isLoginIn ? (
-          <div className={styles.navTab}>
-            <li onClick={() => router.push("/dashboard/add")}>
-              <span className={styles.tabIcon}>
-                <FiPlusCircle />
-                <span className={styles.tooltiptext}>Add Prompt</span>
-              </span>
-            </li>
-          </div>
+          <a
+            className={styles.navItemadd}
+            onMouseEnter={() => setIsExpanded(true)}
+            onMouseLeave={() => setIsExpanded(false)}
+            onClick={() => router.push("/dashboard/add")}
+          >
+            ➕<span className={styles.navTextadd}>Add Icon</span>
+          </a>
         ) : null}
-        <div className={styles.navTab}>
-          <li onClick={() => router.push("/engineering")}>
-            <span className={styles.tabIcon}>
-              <HiOutlineWrenchScrewdriver />
-              <span className={styles.tooltiptext}>Engineering</span>
-            </span>
-          </li>
-        </div>
 
-        <div className={styles.navTab}>
-          <li onClick={() => router.push("/office")}>
-            <span className={styles.tabIcon}>
-              <TbBriefcase />
-              <span className={styles.tooltiptext}>Office</span>
-            </span>
-          </li>
-        </div>
+        <a
+          className={styles.navItem}
+          onMouseEnter={() => setIsExpanded(true)}
+          onMouseLeave={() => setIsExpanded(false)}
+          onClick={() => router.push("/engineering")}
+        >
+          <span className={styles.navIcon}>
+            🛠️<span className={styles.navText}>Engineering</span>
+          </span>
+        </a>
 
-        <div className={styles.navTab}>
-          <li onClick={() => router.push("/image")}>
-            <span className={styles.tabIcon}>
-              <TbPhotoAi />
-              <span className={styles.tooltiptext}>Image</span>
-            </span>
-          </li>
-        </div>
+        <a
+          className={styles.navItem}
+          onMouseEnter={() => setIsExpanded(true)}
+          onMouseLeave={() => setIsExpanded(false)}
+          onClick={() => router.push("/office")}
+        >
+          <span className={styles.navIcon}>
+            📂
+            <span className={styles.navText}>Office</span>
+          </span>
+        </a>
 
-        <div className={styles.navTab}>
-          <li onClick={() => router.push("/films")}>
-            <span className={styles.tabIcon}>
-              <TiVideoOutline />
-              <span className={styles.tooltiptext}>Film</span>
-            </span>
-          </li>
-        </div>
+        <a
+          className={styles.navItem}
+          onMouseEnter={() => setIsExpanded(true)}
+          onMouseLeave={() => setIsExpanded(false)}
+          onClick={() => router.push("/image")}
+        >
+          <span className={styles.navIcon}>
+            🖼️
+            <span className={styles.navText}>Image</span>
+          </span>
+        </a>
 
-        <div className={styles.navTab}>
-          <li onClick={() => router.push("/software")}>
-            <span className={styles.tabIcon}>
-              <BiCodeBlock />
-              <span className={styles.tooltiptext}>Software</span>
-            </span>
-          </li>
-        </div>
+        <a
+          className={styles.navItem}
+          onMouseEnter={() => setIsExpanded(true)}
+          onMouseLeave={() => setIsExpanded(false)}
+          onClick={() => router.push("/films")}
+        >
+          <span className={styles.navIcon}>
+            🎬
+            <span className={styles.navText}>Film</span>
+          </span>
+        </a>
 
-        <div className={styles.navTab}>
-          <li onClick={() => router.push("/settings")}>
-            <span className={styles.tabIcon}>
-              <FiSettings />
-              <span className={styles.tooltiptext}>Settings</span>
-            </span>
-          </li>
-        </div>
+        <a
+          className={styles.navItem}
+          onMouseEnter={() => setIsExpanded(true)}
+          onMouseLeave={() => setIsExpanded(false)}
+          onClick={() => router.push("/software")}
+        >
+          <span className={styles.navIcon}>
+            👨🏽‍💻
+            <span className={styles.navText}>Software</span>
+          </span>
+        </a>
 
-        <div className={styles.navTab}>
-          <li onClick={() => router.push("/more")}>
-            <span className={styles.tabIcon}>
-              <FiGrid />
-              <span className={styles.tooltiptext}>More</span>
+        <a
+          className={styles.navItem}
+          onMouseEnter={() => setIsExpanded(true)}
+          onMouseLeave={() => setIsExpanded(false)}
+          onClick={() => router.push("/settings")}
+        >
+          <span className={styles.navIcon}>
+            ⚙️
+            <span className={styles.navText}>Settings</span>
+          </span>
+        </a>
+
+        <a
+          className={styles.navItem}
+          onMouseEnter={() => setIsExpanded(true)}
+          onMouseLeave={() => setIsExpanded(false)}
+          onClick={() => router.push("/more")}
+        >
+          <span className={styles.moreButton}>
+            <span className={styles.navIcon}>
+              ☰<span className={styles.navText}>More</span>
             </span>
-          </li>
-        </div>
-      </ul>
-    </nav>
+          </span>
+        </a>
+      </nav>
+      <button
+        className={styles.expandButtonBottom}
+        onMouseEnter={() => setIsExpanded(true)}
+        onMouseLeave={() => setIsExpanded(false)}
+      >
+        {isExpanded ? "" : ""}
+      </button>
+    </div>
   );
 }

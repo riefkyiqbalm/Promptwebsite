@@ -2,6 +2,7 @@
   display: flex;
   /* flex-direction: column; */
   min-height: 100vh;
+  background-color: white;
 }
 
 .dashboardContent {
@@ -11,12 +12,9 @@
 
 .mainContent {
   flex: 1;
-  /* padding: 1.5rem; */
-  overflow-y: auto;
-  /* margin-top: 2rem; */
-}
 
-/*Detail Page add styles"*/
+  overflow-y: auto;
+}
 
 /* Top Navbar */
 .topNavbar {
@@ -26,7 +24,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 0 2rem;
-  background-color: var(--navbar-bg);
+  /* background-color: lightcyan; */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   z-index: 100;
   position: fixed;
@@ -279,8 +277,8 @@
 .rightSidebar {
   width: 20%;
   min-width: 250px;
-  background-color: var(--sidebar-bg);
-  border-left: 1px solid var(--border-color);
+  /* background-color: var(--sidebar-bg); */
+  /* border-left: 1px solid var(--border-color); */
   padding: 1.5rem;
   /* position: right; */
   margin-top: 4rem;
@@ -413,6 +411,9 @@
   color: white;
   border-color: var(--primary-color);
   font-weight: 600;
+}
+.logo {
+  margin-left: 40px;
 }
 
 /* Responsive Pagination */

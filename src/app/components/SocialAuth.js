@@ -26,7 +26,7 @@ function GoogleAuthButton() {
   return (
     <button
       onClick={handleGoogleSignIn}
-      className="flex items-center justify-center p-3 bg-white text-gray-700 font-medium rounded-lg shadow-md hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 transition duration-200 ease-in-out transform hover:scale-105 w-12 h-12" /* Adjusted for square icon */
+      className="flex items-center justify-center p-3 bg-white text-gray-700 font-medium rounded-lg shadow-md hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 transition duration-200 ease-in-out transform hover:scale-105 w-40 h-12" /* Adjusted for square icon */
       aria-label="Sign in with Google"
     >
       {/* Google Icon (SVG for better scalability and styling) */}

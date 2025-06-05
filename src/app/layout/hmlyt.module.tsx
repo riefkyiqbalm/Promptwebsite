@@ -4,6 +4,7 @@ import RightColumn from "../components/RightSidebar";
 import styles from "../styles/hmsvr.module.css";
 import dynamic from "next/dynamic";
 import { getData } from "@/services";
+import LeftNavbar from "@/app/components/LeftSideNavbar";
 
 const Metadata: Metadata = {
   title: "root",
@@ -11,7 +12,6 @@ const Metadata: Metadata = {
 };
 
 const TopNavbar = dynamic(() => import("@/app/components/TopNavbar"));
-const LeftNavbar = dynamic(() => import("@/app/components/LeftSideNavbar"));
 const Footer = dynamic(() => import("@/app/components/Footer"));
 
 export default async function BlogLayout({
