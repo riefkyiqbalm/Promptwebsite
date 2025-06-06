@@ -1,5 +1,7 @@
 import { ThemeModeScript } from "flowbite-react";
 import "./globals.css";
+import Alert from "@/app/components/Alert";
+import { AlertProvider } from "@/app/components/hooksAlert";
 export default function DashboardLayout({
   children,
 }: {
@@ -13,7 +15,12 @@ export default function DashboardLayout({
           <link rel="preload" href="globals.css" as="style"></link>
           {/* <ThemeModeScript /> */}
         </head>
-        <body>{children}</body>
+        <body>
+          <AlertProvider>
+            <Alert />
+            {children}
+          </AlertProvider>
+        </body>
       </html>
     </>
   );

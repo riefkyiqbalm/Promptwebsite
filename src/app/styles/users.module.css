@@ -1,0 +1,58 @@
+/* src/app/admin/users/users.module.css */
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap; /* Allow wrapping on small screens */
+  gap: 1rem; /* Space between elements on wrap */
+}
+
+.title {
+  font-size: 2.2rem;
+  color: var(--secondary-color);
+  margin: 0;
+}
+
+.addButton {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  text-decoration: none; /* For Link component */
+  white-space: nowrap; /* Prevent text from wrapping */
+}
+
+.errorMessage {
+  color: var(--danger-color);
+  background-color: #fee2e2;
+  border: 1px solid var(--danger-color);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .title {
+    font-size: 1.8rem;
+    width: 100%; /* Take full width on small screens */
+    text-align: center;
+  }
+  .addButton {
+    width: 100%; /* Take full width */
+    text-align: center;
+  }
+  .header {
+    flex-direction: column;
+  }
+  .container {
+    padding: 1rem 0.5rem;
+  }
+}

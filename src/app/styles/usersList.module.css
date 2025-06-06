@@ -1,0 +1,188 @@
+/* src/app/components/user-list/UserList.module.css */
+.userListContainer {
+  position: relative; /* For loading overlay */
+}
+
+.loadingOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  border-radius: 0.75rem; /* Match card radius */
+  z-index: 10;
+}
+
+.userTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1.5rem;
+  font-size: 0.95rem;
+}
+
+.userTable th,
+.userTable td {
+  padding: 1rem 0.75rem;
+  border-bottom: 1px solid var(--border-color);
+  text-align: left;
+}
+
+.userTable th {
+  background-color: var(--bg-color);
+  font-weight: 600;
+  color: var(--secondary-color);
+  text-transform: uppercase;
+  font-size: 0.85rem;
+}
+
+.userTable tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.userTable tbody tr:hover {
+  background-color: #f9f9f9;
+}
+
+.actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap; /* Allow buttons to wrap */
+}
+
+.actionButton {
+  padding: 0.5rem 0.8rem;
+  border-radius: 0.5rem;
+  font-size: 0.85rem;
+  text-align: center;
+  white-space: nowrap; /* Prevent text wrapping */
+  transition: background-color 0.2s ease-in-out, transform 0.1s ease-in-out;
+}
+
+.editButton {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  text-decoration: none; /* For Link component */
+}
+
+.editButton:hover {
+  background-color: #005bb5;
+  transform: translateY(-1px);
+}
+
+.deleteButton {
+  background-color: var(--danger-color);
+  color: white;
+  border: none;
+}
+
+.deleteButton:hover {
+  background-color: #c02b28;
+  transform: translateY(-1px);
+}
+
+.deleteButton:disabled {
+  background-color: #e0e0e0;
+  cursor: not-allowed;
+}
+
+.noUsers {
+  text-align: center;
+  padding: 2rem;
+  background-color: white;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  margin-top: 1.5rem;
+  color: var(--text-color);
+  font-size: 1.1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .userTable {
+    font-size: 0.85rem;
+  }
+  .userTable th,
+  .userTable td {
+    padding: 0.75rem 0.5rem;
+  }
+  .actionButton {
+    padding: 0.4rem 0.6rem;
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .userTable,
+  .userTable thead,
+  .userTable tbody,
+  .userTable th,
+  .userTable td,
+  .userTable tr {
+    display: block; /* Make table elements behave like block elements */
+  }
+
+  .userTable thead tr {
+    position: absolute;
+    top: -9999px; /* Hide table headers */
+    left: -9999px;
+  }
+
+  .userTable tr {
+    margin-bottom: 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 0.75rem;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .userTable td {
+    border-bottom: 1px solid #eee;
+    position: relative;
+    padding-left: 50%; /* Space for the label */
+    text-align: right;
+    display: block;
+  }
+
+  .userTable td:last-child {
+    border-bottom: none;
+  }
+
+  .userTable td::before {
+    content: attr(data-label); /* Use data-label for content */
+    position: absolute;
+    left: 0.5rem;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
+    text-align: left;
+    font-weight: bold;
+    color: var(--secondary-color);
+  }
+
+  /* Data labels for small screens */
+  .userTable td:nth-of-type(1):before {
+    content: "Name:";
+  }
+  .userTable td:nth-of-type(2):before {
+    content: "Email:";
+  }
+  .userTable td:nth-of-type(3):before {
+    content: "Role:";
+  }
+  .userTable td:nth-of-type(4):before {
+    content: "Actions:";
+  }
+
+  .actions {
+    justify-content: flex-end; /* Align actions to the right */
+  }
+}

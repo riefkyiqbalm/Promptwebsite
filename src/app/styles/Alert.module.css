@@ -1,0 +1,115 @@
+/* src/app/components/alert/Alert.module.css */
+.alertContainer {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  max-width: 90%; /* Responsive width */
+  width: 350px; /* Max width */
+}
+
+.alert {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.25rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  font-size: 0.95rem;
+  color: white; /* Default text color for alerts */
+  border: 1px solid transparent;
+  transform: translateX(100%); /* Initial state for animation */
+  animation: slideIn 0.3s forwards ease-out; /* Slide in animation */
+}
+
+/* Specific alert types */
+.success {
+  background-color: var(--success-color);
+  border-color: #27a85e; /* Darker green */
+}
+
+.error {
+  background-color: var(--danger-color);
+  border-color: #c02b28; /* Darker red */
+}
+
+.warning {
+  background-color: var(--warning-color);
+  color: var(--secondary-color); /* Dark text for warning */
+  border-color: #d1b800; /* Darker yellow */
+}
+
+.info {
+  background-color: var(--primary-color);
+  border-color: #005bb5; /* Darker blue */
+}
+
+.alertContent {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-grow: 1;
+}
+
+.icon {
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
+.message {
+  margin: 0;
+  flex-grow: 1;
+}
+
+.dismissButton {
+  background: none;
+  border: none;
+  color: inherit; /* Inherit color from alert type */
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0 0.5rem;
+  line-height: 1;
+  opacity: 0.8;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.dismissButton:hover {
+  opacity: 1;
+}
+
+/* Animation for sliding in */
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .alertContainer {
+    width: auto; /* Allow container to shrink */
+    left: 0.5rem;
+    right: 0.5rem;
+    top: 0.5rem;
+    max-width: none; /* No max width for mobile */
+  }
+
+  .alert {
+    flex-direction: row; /* Keep content in a row */
+    align-items: flex-start;
+    padding: 0.75rem 1rem;
+    font-size: 0.85rem;
+  }
+
+  .dismissButton {
+    font-size: 1.2rem;
+  }
+}
